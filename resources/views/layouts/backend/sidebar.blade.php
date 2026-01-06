@@ -8,27 +8,12 @@
 
   <!-- Sidebar -->
   <div class="sidebar">
-    <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-4 d-flex align-items-center" style="border-bottom: none;">
-      <div class="image ml-3">
-        <div class="avatar-circle bg-primary-light d-flex align-items-center justify-content-center"
-          style="width: 40px; height: 40px; border-radius: 12px; background-color: #fef2f2;">
-          <i class="fas fa-user text-primary" style="color: #f26b52;"></i>
-        </div>
-      </div>
-      <div class="info ml-2">
-        <a href="javascript:void(0)" class="d-block font-weight-bold"
-          style="color: #1e293b; font-size: 0.9rem;">{{ Auth::user()->username }}</a>
-        <span class="text-xs text-muted">Online</span>
-      </div>
-    </div>
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        @role('admin')
         <li class="nav-item">
           <a href="{{ route('dashboard.index') }}"
             class="nav-link {{ Request::segment(2) == 'dashboard' ? 'active' : '' }}">
@@ -38,35 +23,6 @@
             </p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="{{ route('home.index') }}" class="nav-link {{ Request::segment(1) == 'home' ? 'active' : '' }}">
-            <i class="nav-icon fas fa-home"></i>
-            <p>
-              Home
-            </p>
-          </a>
-        </li>
-        @endrole
-
-        @role('petugas')
-        <li class="nav-item">
-          <a href="{{ route('home.index') }}" class="nav-link {{ Request::segment(1) == 'home' ? 'active' : '' }}">
-            <i class="nav-icon fas fa-home"></i>
-            <p>
-              Home
-            </p>
-          </a>
-        </li>
-        @elserole('siswa')
-        <li class="nav-item">
-          <a href="{{ route('home.index') }}" class="nav-link {{ Request::segment(1) == 'home' ? 'active' : '' }}">
-            <i class="nav-icon fas fa-home"></i>
-            <p>
-              Home
-            </p>
-          </a>
-        </li>
-        @endrole
 
         @role('admin')
         <li class="nav-header">MANAJEMEN DATA</li>
