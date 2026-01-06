@@ -99,6 +99,7 @@ body {
     color: #94a3b8 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
+    letter-spacing: 0.05em !important;
 }
 
 /* Card Modernization */
@@ -266,4 +267,83 @@ body {
     height: 200px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+}
+
+/* Responsiveness & Media Queries */
+@media (max-width: 991.98px) {
+    .main-header {
+        margin: 10px 10px 0 10px !important;
+    }
+
+    .content-wrapper {
+        padding: 15px !important;
+    }
+
+    .stats-card {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .custom-jumbotron {
+        padding: 1.5rem !important;
+    }
+
+    .custom-jumbotron h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .custom-jumbotron p.lead {
+        font-size: 0.95rem !important;
+    }
+
+    .brand-text {
+        font-size: 1.25rem !important;
+    }
+
+    .login-box {
+        width: 90% !important;
+    }
+
+    .login-card-body {
+        padding: 25px !important;
+    }
+
+    .stats-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .stats-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-header {
+        padding: 15px !important;
+    }
+
+    .card-body {
+        padding: 15px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .main-header {
+        padding: 5px 10px !important;
+    }
+
+    .nav-link p {
+        font-size: 0.9rem;
+    }
+
+    .custom-jumbotron h1 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* DataTables Responsive Fix */
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    background-color: var(--primary-color) !important;
 }

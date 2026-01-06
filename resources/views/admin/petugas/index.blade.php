@@ -1,11 +1,14 @@
 @extends('layouts.backend.app')
 @section('title', 'Data Petugas')
 @push('css')
-<!-- DataTables -->
-<link rel="stylesheet" href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<!-- Sweetalert 2 -->
-<link rel="stylesheet" type="text/css" href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/sweetalert2/sweetalert2.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet"
+    href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet"
+    href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Sweetalert 2 -->
+  <link rel="stylesheet" type="text/css"
+    href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/sweetalert2/sweetalert2.min.css">
 @endpush
 @section('content_title', 'Data Petugas')
 @section('content')
@@ -14,33 +17,34 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-      	<a href="javascript:void(0)" class="btn btn-primary btn-sm" 
-        data-toggle="modal" data-target="#createModal">
+        <a href="javascript:void(0)" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#createModal">
           <i class="fas fa-plus fa-fw"></i> Tambah Data
         </a>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        <table id="dataTable2" class="table table-bordered table-striped">
-          <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama Petugas</th>
-            <th>Jenis Kelamin</th>
-            <th>Kode Petugas</th>
-            <th>Aksi</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          	<td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table id="dataTable2" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Petugas</th>
+                <th>Jenis Kelamin</th>
+                <th>Kode Petugas</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <!-- /.card-body -->
     </div>
@@ -51,7 +55,8 @@
 <!-- /.row -->
 
 <!-- Create Modal -->
-<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -61,7 +66,7 @@
         </button>
       </div>
       <form id="store">
-      <div class="modal-body">
+        <div class="modal-body">
           <div class="alert alert-danger print-error-msg" style="display: none;">
             <ul></ul>
           </div>
@@ -76,19 +81,19 @@
           <div class="form-group">
             <label for="jenis_kelamin">Jenis Kelamin:</label>
             <select required="" name="jenis_kelamin" id="jenis_kelamin" class="form-control">
-                <option disabled="" selected="">- PILIH JENIS KELAMIN -</option>
-                <option value="Laki-laki">Laki-laki</option>
-                <option value="Perempuan">Perempuan</option>
+              <option disabled="" selected="">- PILIH JENIS KELAMIN -</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
             </select>
-          </div>            
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">
-          <i class="fas fa-save fa-fw"></i> 
-          SIMPAN
-        </button>
-      </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save fa-fw"></i>
+            SIMPAN
+          </button>
+        </div>
       </form>
     </div>
   </div>
@@ -106,7 +111,7 @@
         </button>
       </div>
       <form id="update">
-      <div class="modal-body">
+        <div class="modal-body">
           <div class="alert alert-danger print-error-msg" style="display: none;">
             <ul></ul>
           </div>
@@ -118,19 +123,19 @@
           <div class="form-group">
             <label for="jenis_kelamin_edit">Jenis Kelamin:</label>
             <select required="" name="jenis_kelamin" id="jenis_kelamin_edit" class="form-control">
-                <option disabled="" selected="">- PILIH JENIS KELAMIN -</option>
-                <option value="Laki-laki">Laki-laki</option>
-                <option value="Perempuan">Perempuan</option>
+              <option disabled="" selected="">- PILIH JENIS KELAMIN -</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
             </select>
-          </div>            
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">
-          <i class="fas fa-save fa-fw"></i> 
-          UPDATE
-        </button>
-      </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save fa-fw"></i>
+            UPDATE
+          </button>
+        </div>
       </form>
     </div>
   </div>
@@ -140,12 +145,16 @@
 @stop
 
 @push('js')
-<!-- DataTables  & Plugins -->
-<script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<!-- Sweetalert 2 -->
-<script type="text/javascript" src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/sweetalert2/sweetalert2.min.js"></script>
-@include('admin.petugas.ajax')
+  <!-- DataTables  & Plugins -->
+  <script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script
+    src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script
+    src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script
+    src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <!-- Sweetalert 2 -->
+  <script type="text/javascript"
+    src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/sweetalert2/sweetalert2.min.js"></script>
+  @include('admin.petugas.ajax')
 @endpush

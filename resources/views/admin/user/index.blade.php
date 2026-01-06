@@ -1,11 +1,14 @@
 @extends('layouts.backend.app')
 @section('title', 'Data User')
 @push('css')
-<!-- DataTables -->
-<link rel="stylesheet" href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<!-- Sweetalert 2 -->
-<link rel="stylesheet" type="text/css" href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/sweetalert2/sweetalert2.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet"
+    href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet"
+    href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Sweetalert 2 -->
+  <link rel="stylesheet" type="text/css"
+    href="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/sweetalert2/sweetalert2.min.css">
 @endpush
 @section('content_title', 'Data User')
 @section('content')
@@ -15,24 +18,26 @@
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
-        <table id="dataTable2" class="table table-bordered table-striped">
-          <thead>
-          <tr>
-            <th>No</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Aksi</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          	<td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table id="dataTable2" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <!-- /.card-body -->
     </div>
@@ -43,7 +48,8 @@
 <!-- /.row -->
 
 <!-- Modal Create -->
-<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="create-modalLabel" aria-hidden="true">
+<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="create-modalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -54,26 +60,26 @@
       </div>
       <div class="modal-body">
         <form id="createForm">
-        <div class="form-group">
+          <div class="form-group">
             <label for="n">Name</label>
             <input type="" required="" id="n" name="name" class="form-control">
-        </div>
-        <div class="form-group">
+          </div>
+          <div class="form-group">
             <label for="e">Email</label>
             <input type="" required="" id="e" name="email" class="form-control">
-        </div>
-        <div class="form-group">
+          </div>
+          <div class="form-group">
             <label for="p">Password</label>
             <input type="password" required="" id="p" name="password" class="form-control">
-        </div>
-        <div class="form-group">
+          </div>
+          <div class="form-group">
             <label for="r">Role</label>
             <select name="role" id="r" class="form-control">
-                <option disabled="">- PILIH ROLE -</option>
-                <option value="admin">Admin</option>
-                <option value="user">User</option>
+              <option disabled="">- PILIH ROLE -</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
             </select>
-        </div>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -86,7 +92,8 @@
 <!-- Modal Create -->
 
 <!-- Modal Edit -->
-<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modalLabel" aria-hidden="true">
+<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -97,21 +104,21 @@
       </div>
       <div class="modal-body">
         <form id="editForm">
-        <div class="form-group">
+          <div class="form-group">
             <label for="name">Name</label>
             <input type="hidden" required="" id="id" name="id" class="form-control">
-            <input type="" required="" id="name"readonly  name="name" class="form-control">
-        </div>
-        <div class="form-group">
+            <input type="" required="" id="name" readonly name="name" class="form-control">
+          </div>
+          <div class="form-group">
             <label for="password">Password</label>
             <input type="hidden" name="old_password" id="old_password" class="form-control">
-            <input type="password" id="password"  name="password" class="form-control">
+            <input type="password" id="password" name="password" class="form-control">
             <small class="text-secondary">Kosongkan password jika tidak ingin diubah</small>
-        </div>
-        <div class="form-group">
+          </div>
+          <div class="form-group">
             <label for="email">Email</label>
             <input type="" required="" id="email" name="email" class="form-control">
-        </div>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -126,12 +133,16 @@
 @stop
 
 @push('js')
-<!-- DataTables  & Plugins -->
-<script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<!-- Sweetalert 2 -->
-<script type="text/javascript" src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/sweetalert2/sweetalert2.min.js"></script>
-@include('admin.user.ajax')
+  <!-- DataTables  & Plugins -->
+  <script src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script
+    src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script
+    src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script
+    src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <!-- Sweetalert 2 -->
+  <script type="text/javascript"
+    src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/plugins/sweetalert2/sweetalert2.min.js"></script>
+  @include('admin.user.ajax')
 @endpush
