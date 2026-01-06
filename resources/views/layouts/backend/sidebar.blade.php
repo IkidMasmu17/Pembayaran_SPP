@@ -1,19 +1,25 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-light-primary elevation-1">
   <!-- Brand Logo -->
   <a href="" class="brand-link">
-    <img src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/dist/img/laravel.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">SPPR</span>
+    <img src="{{ asset('templates/backend/AdminLTE-3.1.0') }}/dist/img/laravel.jpg" alt="AdminLTE Logo"
+      class="brand-image img-circle" style="opacity: .8; width: 40px; height: 40px; object-fit: cover;">
+    <span class="brand-text font-weight-bold ml-2">SPPR</span>
   </a>
 
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="my-auto ml-3">
-        <i class="nav-icon fas fa-user-circle fa-2x text-light"></i>
+    <div class="user-panel mt-3 pb-3 mb-4 d-flex align-items-center" style="border-bottom: none;">
+      <div class="image ml-3">
+        <div class="avatar-circle bg-primary-light d-flex align-items-center justify-content-center"
+          style="width: 40px; height: 40px; border-radius: 12px; background-color: #fef2f2;">
+          <i class="fas fa-user text-primary" style="color: #f26b52;"></i>
+        </div>
       </div>
-      <div class="info">
-        <a href="javascript:void(0)" class="d-block">{{ Auth::user()->username }}</a>
+      <div class="info ml-2">
+        <a href="javascript:void(0)" class="d-block font-weight-bold"
+          style="color: #1e293b; font-size: 0.9rem;">{{ Auth::user()->username }}</a>
+        <span class="text-xs text-muted">Online</span>
       </div>
     </div>
 
@@ -24,7 +30,8 @@
              with font-awesome or any other icon font library -->
         @role('admin')
         <li class="nav-item">
-          <a href="{{ route('dashboard.index') }}" class="nav-link {{ Request::segment(2) == 'dashboard' ? 'active' : '' }}">
+          <a href="{{ route('dashboard.index') }}"
+            class="nav-link {{ Request::segment(2) == 'dashboard' ? 'active' : '' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -40,7 +47,7 @@
           </a>
         </li>
         @endrole
-        
+
         @role('petugas')
         <li class="nav-item">
           <a href="{{ route('home.index') }}" class="nav-link {{ Request::segment(1) == 'home' ? 'active' : '' }}">
@@ -60,7 +67,7 @@
           </a>
         </li>
         @endrole
-        
+
         @role('admin')
         <li class="nav-header">MANAJEMEN DATA</li>
         <li class="nav-item">
@@ -72,7 +79,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('pembayaran-spp.index') }}" class="nav-link {{ Request::segment(2) == 'pembayaran-spp' ? 'active' : '' }}">
+          <a href="{{ route('pembayaran-spp.index') }}"
+            class="nav-link {{ Request::segment(2) == 'pembayaran-spp' ? 'active' : '' }}">
             <i class="nav-icon fas fa-list"></i>
             <p>
               Pembayaran
@@ -88,7 +96,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('admin-list.index') }}" class="nav-link {{ Request::segment(2) == 'admin-list' ? 'active' : '' }}">
+          <a href="{{ route('admin-list.index') }}"
+            class="nav-link {{ Request::segment(2) == 'admin-list' ? 'active' : '' }}">
             <i class="nav-icon fas fa-user-tie"></i>
             <p>
               Admin
@@ -104,7 +113,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('petugas.index') }}" class="nav-link {{ Request::segment(2) == 'petugas' ? 'active' : '' }}">
+          <a href="{{ route('petugas.index') }}"
+            class="nav-link {{ Request::segment(2) == 'petugas' ? 'active' : '' }}">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Petugas
@@ -120,7 +130,7 @@
           </a>
         </li>
         @endrole
-        
+
         @role('petugas')
         <li class="nav-header">MANAJEMEN DATA</li>
         <li class="nav-item">
@@ -132,7 +142,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('pembayaran-spp.index') }}" class="nav-link {{ Request::segment(2) == 'pembayaran-spp' ? 'active' : '' }}">
+          <a href="{{ route('pembayaran-spp.index') }}"
+            class="nav-link {{ Request::segment(2) == 'pembayaran-spp' ? 'active' : '' }}">
             <i class="nav-icon fas fa-list"></i>
             <p>
               Pembayaran
@@ -160,7 +171,8 @@
         @role('admin|petugas')
         <li class="nav-header">PEMBAYARAN</li>
         <li class="nav-item">
-          <a href="{{ route('pembayaran.index') }}" class="nav-link {{ Request::segment(2) == 'bayar' ? 'active' : '' }}">
+          <a href="{{ route('pembayaran.index') }}"
+            class="nav-link {{ Request::segment(2) == 'bayar' ? 'active' : '' }}">
             <i class="nav-icon fas fa-money-check"></i>
             <p>
               Pembayaran
@@ -168,7 +180,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('pembayaran.status-pembayaran') }}" class="nav-link {{ Request::segment(2) == 'status-pembayaran' ? 'active' : '' }}">
+          <a href="{{ route('pembayaran.status-pembayaran') }}"
+            class="nav-link {{ Request::segment(2) == 'status-pembayaran' ? 'active' : '' }}">
             <i class="nav-icon fas fa-money-bill"></i>
             <p>
               Status Pembayaran
@@ -176,7 +189,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('pembayaran.history-pembayaran') }}" class="nav-link {{ Request::segment(2) == 'history-pembayaran' ? 'active' : '' }}">
+          <a href="{{ route('pembayaran.history-pembayaran') }}"
+            class="nav-link {{ Request::segment(2) == 'history-pembayaran' ? 'active' : '' }}">
             <i class="nav-icon fas fa-history"></i>
             <p>
               History Pembayaran
@@ -184,7 +198,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('pembayaran.laporan') }}" class="nav-link {{ Request::segment(2) == 'laporan' ? 'active' : '' }}">
+          <a href="{{ route('pembayaran.laporan') }}"
+            class="nav-link {{ Request::segment(2) == 'laporan' ? 'active' : '' }}">
             <i class="nav-icon fas fa-file"></i>
             <p>
               Laporan Pembayaran
@@ -192,11 +207,12 @@
           </a>
         </li>
         @endrole
-        
+
         @role('siswa')
         <li class="nav-header">PEMBAYARAN</li>
         <li class="nav-item">
-          <a href="{{ route('siswa.pembayaran-spp') }}" class="nav-link {{ Request::segment(2) == 'pembayaran-spp' ? 'active' : '' }}">
+          <a href="{{ route('siswa.pembayaran-spp') }}"
+            class="nav-link {{ Request::segment(2) == 'pembayaran-spp' ? 'active' : '' }}">
             <i class="nav-icon fas fa-money-bill"></i>
             <p>
               Pembayaran
@@ -204,7 +220,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('siswa.history-pembayaran') }}" class="nav-link {{ Request::is('siswa/history-pembayaran') ? 'active' : '' }}">
+          <a href="{{ route('siswa.history-pembayaran') }}"
+            class="nav-link {{ Request::is('siswa/history-pembayaran') ? 'active' : '' }}">
             <i class="nav-icon fas fa-history"></i>
             <p>
               History Pembayaran
@@ -212,7 +229,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('siswa.laporan-pembayaran') }}" class="nav-link {{ Request::is('siswa/laporan-pembayaran') ? 'active' : '' }}">
+          <a href="{{ route('siswa.laporan-pembayaran') }}"
+            class="nav-link {{ Request::is('siswa/laporan-pembayaran') ? 'active' : '' }}">
             <i class="nav-icon fas fa-file"></i>
             <p>
               Laporan
@@ -232,7 +250,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('permissions.index') }}" class="nav-link {{ Request::segment(2) == 'permissions' ? 'active' : '' }}">
+          <a href="{{ route('permissions.index') }}"
+            class="nav-link {{ Request::segment(2) == 'permissions' ? 'active' : '' }}">
             <i class="nav-icon fas fa-key"></i>
             <p>
               Permissions List
@@ -240,8 +259,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('role-permission.index') }}" 
-          class="nav-link {{ Request::segment(2) == 'role-permission' ? 'active' : '' }}">
+          <a href="{{ route('role-permission.index') }}"
+            class="nav-link {{ Request::segment(2) == 'role-permission' ? 'active' : '' }}">
             <i class="nav-icon fas fa-circle"></i>
             <p>
               Role - Permission
@@ -249,8 +268,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('user-role.index') }}" 
-          class="nav-link {{ Request::segment(2) == 'user-role' ? 'active' : '' }}">
+          <a href="{{ route('user-role.index') }}"
+            class="nav-link {{ Request::segment(2) == 'user-role' ? 'active' : '' }}">
             <i class="nav-icon fas fa-circle"></i>
             <p>
               User - Role
@@ -258,8 +277,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('user-permission.index') }}" 
-          class="nav-link {{ Request::segment(2) == 'user-permission' ? 'active' : '' }}">
+          <a href="{{ route('user-permission.index') }}"
+            class="nav-link {{ Request::segment(2) == 'user-permission' ? 'active' : '' }}">
             <i class="nav-icon fas fa-circle"></i>
             <p>
               User - Permission
