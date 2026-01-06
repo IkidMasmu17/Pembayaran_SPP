@@ -1,9 +1,5 @@
 # SISTEM PEMBAYARAN SPP MODERN — SPPR
 
-![SPPR Banner](https://user-images.githubusercontent.com/75960970/156728592-e24e1e0c-5a72-4398-ab15-8f5fe51bb23e.png)
-
-A modernized, high-performance web application for Managing School Tuition Payments (SPP). Built with a focus on clean aesthetics, responsive design, and robust role-based access control.
-
 ## 🚀 Key Improvements (As of Jan 2026)
 - **Modern UI/UX**: Completely redesigned with a premium light-mode theme using the **Inter font** and custom design systems.
 - **PHP 8.4 Support**: Optimized codebase and dependencies for the latest PHP standards.
