@@ -14,15 +14,6 @@
 - **Auth & Access**: Laravel Fortify, Spatie Role-Permission
 - **Reporting**: Laravel DOMPDF
 
-## 🔑 Login Credentials (Seed Data)
-
-| Role | Username | Password |
-| :--- | :--- | :--- |
-| **Admin** | `admin123` | `password` |
-| **Petugas** | `elaina123` | `password` |
-| **Siswa 1** | `diva123` | `password` |
-| **Siswa 2** | `yuu123` | `password` |
-
 ## 📦 Features
 
 ### 💻 Administrator & Petugas
